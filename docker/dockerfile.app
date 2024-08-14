@@ -1,9 +1,9 @@
 FROM node:22
 
-WORKDIR /workspace
+WORKDIR /app
 
-COPY ./app/package*.json /workspace/app/
-RUN npm install --prefix ./app
+COPY ./app/package*.json /app
+RUN npm install
 
 COPY . .
 
