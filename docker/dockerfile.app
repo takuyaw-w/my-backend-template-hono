@@ -1,12 +1,12 @@
 FROM node:22
 
-WORKDIR /app
+WORKDIR /workspace
 
-COPY ./app/package*.json . 
-RUN npm install
+COPY ./app/package*.json /workspace/app/
+RUN npm install --prefix ./app
 
-COPY ./app .
+COPY . .
 
 EXPOSE 3000
 
-CMD [ "npm", "run", "dev" ]
+# CMD [ "npm", "run", "dev" ]
